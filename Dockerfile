@@ -6,10 +6,11 @@ ENV PYTHONUNBUFFERED=1 \
     PYTHONDONTWRITEBYTECODE=1 \
     DEBIAN_FRONTEND=noninteractive
 
-# Install crucial system dependencies required by OpenCV
+# Install crucial system dependencies required by OpenCV and Tesseract
 RUN apt-get update && apt-get install -y --no-install-recommends \
     libgl1 \
     libglib2.0-0 \
+    tesseract-ocr \
     && rm -rf /var/lib/apt/lists/*
 
 # Install uv for blazingly fast Python package management
